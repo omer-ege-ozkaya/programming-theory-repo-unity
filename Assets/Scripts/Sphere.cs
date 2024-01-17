@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sphere : MonoBehaviour
+// INHERITANCE
+public class Sphere : Shape
 {
-    // Start is called before the first frame update
-    void Start()
+
+    // POLYMORPHISM
+    protected override void displayName()
     {
-        
+        TextBox = "Sphere";
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnMouseDown()
     {
-        
+        // ABSTRACTION
+        displayName();
     }
 }

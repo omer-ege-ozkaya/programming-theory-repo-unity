@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cylinder : MonoBehaviour
+// INHERITANCE
+public class Cylinder : Shape
 {
-    // Start is called before the first frame update
-    void Start()
+
+    // POLYMORPHISM
+    protected override void displayName()
     {
-        
+        TextBox = "Cylinder";
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnMouseDown()
     {
-        
+        // ABSTRACTION
+        displayName();
     }
 }

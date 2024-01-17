@@ -1,18 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Shape : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private TextMeshProUGUI textBox;
+
+    // ENCAPSULATION
+    public string TextBox
     {
-        
+        get { return textBox.text;  }
+        set
+        {
+            if (value.Length < 10)
+            {
+                textBox = GameObject.Find("ShapeNameText").GetComponent<TextMeshProUGUI>();
+                textBox.text = value;
+            } else
+            {
+                Debug.Log("Too long!");
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    protected virtual void displayName()
     {
-        
+        textBox.text = "Shape";
     }
 }
